@@ -17,3 +17,13 @@ Vou estudar o paradigma de programação mais usado no mercado, entendendo o que
 - Encapsulamento
 - Proposta de atributos privados
 - Return e early return
+
+# Aula 03:
+## O que aprendemos nessa aula:
+
+- Package.json
+- Modules
+- import/export
+- Quais as vantagens de ter um código onde usamos classes e composição ao invés de tipos primitivos
+- Tipos de valor e tipos de referência
+- Alterando dinamicamente um objeto
