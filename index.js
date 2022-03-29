@@ -1,33 +1,5 @@
-class Cliente {
-    Nome; 
-    CPF;
-    RG;
-}
-
-class ContaCorrente {
-    Agencia;
-    Saldo;
-        
-    sacar(valor){ // Comportamento
-        // Metodo sacar
-        if(this.Saldo >= valor){
-            this.Saldo -= valor;
-        } else {
-            console.log("Saldo insuficiente.")
-        }
-    }
-
-    depositar(valor){
-        // Metodo depositar
-        if(valor > 0){
-            this.Saldo += valor;
-        } else {
-            return console.log("Saldo insuficiente.")
-        }
-            
-    }
-}
-
+import { Cliente } from "./Cliente.js";
+import { ContaCorrente } from "./ContaCorrente.js";
 
 
 const cliente1 = new Cliente(); // Contrutor
@@ -37,18 +9,23 @@ cliente1.RG = "123456"; // Atributos
 
 const cliente2 = new Cliente();
 cliente2.Nome = "Mayara";
-cliente2.CPF = "22233344455"
-cliente2.RG = "234567"
+cliente2.CPF = "22233344455";
+cliente2.RG = "234567";
 
-const contaCorrentoCarlos = new ContaCorrente();
-contaCorrentoCarlos.Agencia = "1599";
-contaCorrentoCarlos.Saldo = 100;
-contaCorrentoCarlos.sacar(50);
+const contaCorrenteCarlos = new ContaCorrente();
+contaCorrenteCarlos.cliente = cliente1;
+contaCorrenteCarlos.Agencia = "1599";
+contaCorrenteCarlos.Saldo = 100;
+contaCorrenteCarlos.depositar(200);
 
-contaCorrentoMayara = new ContaCorrente();
-contaCorrentoMayara.Agencia = "1599"
-contaCorrentoMayara.Saldo = 100;
+const contaCorrenteMayara = new ContaCorrente();
+contaCorrenteMayara.cliente = cliente2;
+contaCorrenteMayara.Agencia = "1599";
+contaCorrenteMayara.Saldo = 190;
+contaCorrenteMayara.depositar(400);
 
-console.log(`Nome: ${cliente1.Nome} Agencia: ${contaCorrentoCarlos.Agencia} Saldo: R$${contaCorrentoCarlos.Saldo}`);
-// console.log(contaCorrentoMayara);
-// console.log(cliente2);
+
+contaCorrenteCarlos.transferir(150, contaCorrenteMayara);
+contaCorrenteMayara.transferir(300, contaCorrenteCarlos);
+console.log(contaCorrenteCarlos);
+console.log(contaCorrenteMayara);

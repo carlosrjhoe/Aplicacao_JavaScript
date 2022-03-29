@@ -1,0 +1,16 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Vou estudar o paradigma de programação mais usado no mercado, entendendo o que são referências e objetos usando atributos, métodos da instância e da classe, definindo objetos através de construtores e encapsulamento.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosrjhoe/Aplicacao_JavaScript.git"
+  },
+  "author": "Carlos Roberto",
+  "license": "ISC",
+  "type": "module"
+}
