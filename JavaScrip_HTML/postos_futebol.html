@@ -9,15 +9,35 @@
 <body>
     <script>
 
+        function mostrarLinha(){
+            document.write("<hr>")
+        }
+
         function mostra(frase){
-            document.write(frase);
+            document.write(frase)
+        }
+
+        function calculaPontos(pontos, pontosTimeAdversario){
+            if(pontos > pontosTimeAdversario){
+                document.write("Nosso time está indo bem! Melhor que Livros Velhos.");
+            } else if (pontos == pontosTimeAdversario){
+                document.write("Estamos enpatados com Livros Velhos!");
+            } else{
+                document.write("Vixe, nosso time é muito ruim!!!")
+            }
         }
 
         var vitorias = prompt("Quantos jogos o CDC Futebol Clube venceu?");
         var empates = prompt("Quantos jogos o CDC Futebol Clube empatou?");
-        var pontos = (vitorias * 3) + empates;
+        var derrota = prompt("Quantos jogos o CDC Futebol Clube perdeu?");
+        var vitoriasTimeAdversario = prompt("Quantos jogos o Time adversário venceu?");
+        var empatesTimeAdversario = prompt("Quantos jogos Time adversário empatou?");
+        var derrotaTimeAdversario = prompt("Quantos jogos Time adversário perdeu?");
+        var pontos = (vitorias * 3 + parseInt(empates)) - parseInt(derrota);
+        var pontosTimeAdversario = (vitoriasTimeAdversario * 3 + parseInt(empatesTimeAdversario)) - parseInt(derrotaTimeAdversario);
 
-        mostra(`Nosso time tem ${pontos} pontos.`)
+        mostra(`Nosso time tem ${pontos} pontos.<br>`);
+        calculaPontos(pontos, pontosTimeAdversario);
     </script>
 </body>
 </html>
