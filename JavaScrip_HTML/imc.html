@@ -11,7 +11,7 @@
 
         function mostrarLinha(){
             document.write("<br>")
-        };
+        }
 
         function mostra(frase){
             document.write(frase)
@@ -21,12 +21,18 @@
             return peso / (altura*altura)
         }
 
+        function calculaDiasDeVida(idade){
+            return idade * 365
+        }
+
+        function calculaBatimentos(idade){
+            return calculaDiasDeVida(idade) * 24 * 60 * 80
+        }
+
         var nome = prompt("Qual é seu nome?");
         var idade = prompt("Qual a sua idade?");
         var peso = prompt("Qual o seu peso em (kg)?");
-        var altura = prompt("Qual a sua altura?");
-        var diasDeVida = idade*365;
-        var batimentos = diasDeVida * 24 * 60 * 80;
+        var altura = prompt("Qual a sua altura?"); 
 
         mostra(`Meu nome é: ${nome}`);
         mostrarLinha();
@@ -38,9 +44,9 @@
         mostrarLinha();
         mostra(`Meu IMC= ${calculaIMC(peso, altura).toFixed(2)}`);
         mostrarLinha();
-        mostra(`Você já viveu ${diasDeVida} dias de sua vida!`);
+        mostra(`Você já viveu ${calculaDiasDeVida(idade)} dias de sua vida!`);
         mostrarLinha();
-        mostra(`Batimentos cárdiacos: ${batimentos} vezes!`)
+        mostra(`Seu coração já bateu ${calculaBatimentos(idade)} vezes. Haja coração!`)
 
     </script>
 </body>
