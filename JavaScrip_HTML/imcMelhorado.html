@@ -12,18 +12,22 @@
             const altura = 1.81;
         
             function verificaImc(peso, altura){
+                // Verificar qual é o imc e coloca uma condição dependendo do resultado.
                 var imc = (peso / Math.pow(altura,2).toFixed(2)).toFixed(2)
                 if(imc < 18.5){
+                    // Condição se for a baixo do valor determinado.
                     document.write(`Seu IMC = ${imc}<br>`);
                     document.write(`Você está ABAIXO do seu peso ideal`);
                     return
                 }
                 else if(imc > 18.5 && imc < 30.0){
+                    // Condição se estiver dentro dos valores determinados.
                     document.write(`Seu IMC = ${imc}<br>`);
                     document.write(`Você está no peso ideal.`);
                     return
                 }
                 else (imc > 30.0)
+                    // Condição se estiver acima dos valores determinados.
                     document.write(`Seu IMC = ${imc}<br>`);
                     document.write(`Você está ACIMA do peso ideal.`);
                     return
