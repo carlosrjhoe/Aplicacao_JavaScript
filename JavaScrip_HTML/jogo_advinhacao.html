@@ -15,6 +15,10 @@
         }
 
         function verificaChute(mostra, chute, numeroPensando){
+            if(isNaN(chute)){
+                // Verifica se a opção inserida não é um número.
+                mostra("ERRO! Apenas numeros...")
+            }
             if (chute == numeroPensando){
                 mostra(`Uau! Você acertou, pois eu pensei no ${numeroPensando}`);
             } else if (chute < numeroPensando){
@@ -23,9 +27,8 @@
                 mostra("Errou! Tente um número mais baixo");
             }
         }
-
         // Sorteiar um numero aleatório
-        var numeroPensando = Math.round(Math.random()*10);
+        var numeroPensando = Math.round(Math.random(10));
 
         var chute = prompt("Digite um número:");
         verificaChute(mostra, chute, numeroPensando);
