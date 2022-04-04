@@ -11,16 +11,24 @@
         let copaDoMundo = 1930;
 
         function mostra(frase){
-            alert(frase);
-        }
-
+            document.write(`${frase}<br>`);
+        };
+        
         function verificaCopa(mostra, copaDoMundo){
-            while(true){
-                mostra(`${copaDoMundo} tem copa!`);
-                copaDoMundo += 4;
+            // Verifica se o ano limite inserido pelo usuário for menor que o ano que iníciou a copa.
+            if(anoLimite <= copaDoMundo){
+                document.write("Nesse ano ainda não existia futebol!")
+            } else {
+                // Mostrá os anos da copa até 2014 em um loop.
+                while(copaDoMundo <= anoLimite){
+                    mostra(`${copaDoMundo} tem copa!`);
+                    copaDoMundo += 4;
+                }
+            mostra(`Ufa! Esses foram os anos de copa até ${anoLimite}`);
             }
         }
 
+        let anoLimite = prompt("Qual é o ano limite da copa que deseja:")
         verificaCopa(mostra, copaDoMundo)
     </script>
 </body>
