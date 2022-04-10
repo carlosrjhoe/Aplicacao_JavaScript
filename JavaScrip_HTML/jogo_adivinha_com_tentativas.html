@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de advinhação</title>
+</head>
+<body>
+    <script>
+
+        function mostra(frase){
+            alert(frase);
+            return;
+        }
+
+        function verificaChute(mostra, chute, numeroPensando){
+            var tentativas = 1;
+            while (tentativas <= 3) {
+                if(isNaN(chute)){
+                    // Verifica se a opção inserida não é um número.
+                    mostra("ERRO! Apenas numeros...")
+                }
+                if (chute == numeroPensando){
+                    mostra(`Uau! Você acertou, pois eu pensei no ${numeroPensando}`);
+                } else if (chute < numeroPensando){
+                    mostra("Errou! Tente um número mais alto.");
+                    var chute = prompt("Qual você acha que é: ");
+                } else if (chute > numeroPensando){
+                    mostra("Errou! Tente um número mais baixo");
+                    var chute = prompt("Qual você acha que é: ");
+                }
+                tentativas += 1;
+            }
+        }
+        // Sorteiar um numero aleatório
+        var numeroPensando = Math.round(Math.random(10));
+
+        var chute = prompt("Digite um número:");
+        verificaChute(mostra, chute, numeroPensando);
+
+        
+    </script>
+</body>
+</html>
