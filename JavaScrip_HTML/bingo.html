@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bingo</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingo</title>
+  </head>
+  <body>
 
-  <input type="text" id="numero"/>
-  <input type="submit" value="Adicione um numero" id="verificar">
+    <script>
+      var sorteados = [],
+          sorteadosAleatorios = [],
+          acertos = 0;
 
-  <script>
-    var sorteados = [];
+      function sortearNumerosAleatorios(){
 
-    function adicionarSorteados(){
-      var numero = document.getElementById("numero").value;
-      for(var i = 0; i < sorteados.length; i++){
-        if(sorteados[i] == numero){
-          console.log("numero já sorteado!")
-          return;
+        for(var i=0; i<=5; i++){
+          // Perguntar numeros e adicionalos em uma array
+          var num = parseInt(prompt("Escolha um numero"));
+          sorteados.push(num);
+
+          // Adicionar numeros aleatorios em uma nova
+          var numerosSorteados = Math.round(Math.random()*60 - 1);
+          sorteadosAleatorios.push(numerosSorteados)
+
+          // Verificar a quantidade de acertos
+          acertos += num === sorteadosAleatorios ? 1 : 0;
         }
+        console.log(sorteados);
+        console.log(sorteadosAleatorios);
       }
-      sorteados.push(numero);
-      console.log(sorteados);
-    }
 
-    // evento de clicar (onclick) do nosso botão verificar.
-    var botao = document.getElementById("verificar");
-    botao.onclick = adicionarSorteados;
-  </script>
-</body>
+      sortearNumerosAleatorios();
+    </script>
+  </body>
 </html>
