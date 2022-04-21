@@ -16,15 +16,12 @@
     botaoAdivinhar.onclick = botaoClicado
     
     function botaoClicado() {
-      for(var i = 0; i < segredo.length; i + 1){
-        if(caixaDoNumero.value == segredo[i]){
-          alert("Parabéns, Você acertou...")
-          return;
-        } else {
-          alert("Infelismente Você errou!")
-          return;
+      for(var i = 0; i < segredo.length; i++){
+        if(segredo[i] == caixaDoNumero.value){
+          return document.write("Você acertou, Parabéns!!!")  
         }
       }
+      document.write("Infelizmente você errou!")
     }
   </script>
 </body>
