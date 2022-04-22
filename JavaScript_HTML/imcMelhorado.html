@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhorando calculadora de IMC</title>
+</head>
+    <body>
+        <script>
+            const peso = 99.3;
+            const altura = 1.81;
+        
+            function verificaImc(peso, altura){
+                // Verificar qual é o imc e coloca uma condição dependendo do resultado.
+                var imc = (peso / Math.pow(altura,2).toFixed(2)).toFixed(2)
+                if(imc < 18.5){
+                    // Condição se for a baixo do valor determinado.
+                    document.write(`Seu IMC = ${imc}<br>`);
+                    document.write(`Você está ABAIXO do seu peso ideal`);
+                    return
+                }
+                else if(imc > 18.5 && imc < 30.0){
+                    // Condição se estiver dentro dos valores determinados.
+                    document.write(`Seu IMC = ${imc}<br>`);
+                    document.write(`Você está no peso ideal.`);
+                    return
+                }
+                else (imc > 30.0)
+                    // Condição se estiver acima dos valores determinados.
+                    document.write(`Seu IMC = ${imc}<br>`);
+                    document.write(`Você está ACIMA do peso ideal.`);
+                    return
+            }
+            verificaImc(peso, altura);
+        </script>
+    </body>
+</html>

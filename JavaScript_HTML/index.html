@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação</title>
+</head>
+    <body>
+        <script>
+            const ano = 2022;
+            const eu = 37;
+            const mayara = 37;
+            const neto = 7;
+            const luna = 5;
+            let total = eu + mayara + neto + luna
+
+            // Função mostra uma frase no navegador em letras grandes e pula uma linha
+            function mostra(frase){
+                document.write("<big>"+frase+"</big>")
+                mostrarLinha();
+            };
+
+            // Função pular duas linhas e criar uma linha
+            function mostrarLinha(){
+                document.write("<br>");
+                document.write("<hr>");
+                document.write("<br>");
+            };
+
+            mostra("Usando funções para melhorar o código:");
+            mostra(`Eu nasci em: ${ano - eu}<br>`);
+            mostra(`Mayara nasceu em: ${ano - mayara}<br>`);
+            mostra(`Neto nasceu em: ${ano - neto}<br>`);
+            mostra(`Luna nasceu em: ${ano - luna}<br>`);
+            mostra(`A soma das nossas idades: ${total}<br>`)
+            mostra(`A média das idades: ${Math.round(total)}<br>`)
+        </script>
+    </body>
+</html>

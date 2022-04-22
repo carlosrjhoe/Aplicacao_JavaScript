@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingo</title>
+  </head>
+  <body>
+
+    <script>
+      var sorteados = [],
+          sorteadosAleatorios = [],
+          acertos = 0;
+
+      function sortearNumerosAleatorios(){
+
+        for(var i=0; i<=5; i++){
+          // Perguntar numeros e adicionalos em uma array
+          var num = parseInt(prompt("Escolha um numero"));
+          sorteados.push(num);
+
+          // Adicionar numeros aleatorios em uma nova
+          var numerosSorteados = Math.round(Math.random()*60 - 1);
+          sorteadosAleatorios.push(numerosSorteados)
+
+          // Verificar a quantidade de acertos
+          acertos += num === sorteadosAleatorios ? 1 : 0;
+        }
+        console.log(sorteados);
+        console.log(sorteadosAleatorios);
+      }
+
+      sortearNumerosAleatorios();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisando uso de HTML e criando o jogo</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="numero">
+        <input type="submit" id="adivinhar" value="Compare com o meu segredo">
+    </div>
+    <script>
+        var segredo = [16, 34, 37, 42, 50, 58, 60];
+        // document.getElementById é uma forma de fazer com que o JavaScript vasculhe o código HTML e encontre um elemento de id = numero
+
+        var caixaDoNumero = document.getElementById("numero");
+        var botaoAdivinhar = document.getElementById("adivinhar");
+
+        function botaoClicado(){
+            if (segredo == caixaDoNumero.value){
+                alert(`Parabêns! Você acertou... Eu pensei em ${segredo}`)
+            } else {
+                alert('infelizmente você errou...')
+            }
+        }
+        // Ela diz que quando o botão adivinhar for clicado (onclick), a função botaoClicado deve ser chamada.
+        console.log(segredo);
+        console.log(`o valor do indice 3 é = ${segredo[3]}`) // Achar o valor de um idice em uma array
+        console.log(`O tamanho da array é ${segredo.length}`); // saber qual é o tamanho.
+        for(var i = 0; i < segredo.length; i ++){
+            console.log(segredo[i])
+        };
+        botaoAdivinhar.onclick = botaoClicado;
+    </script>
+</body>
+</html>
