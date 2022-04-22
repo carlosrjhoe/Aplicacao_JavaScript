@@ -4,9 +4,15 @@
 //   console.log(`Nome: ${nome}`)
 // });
 
-var canais = ["Globo",	"Sbt",	"Record"];
-canais.forEach(function(canal){
-  canais.push("RedeTv");
-  console.log(canal);
+var elemento = [
+  {Nome: "Globo"},
+  {Nome: "Sbt"},
+  {Nome: "Record"}
+];
+elemento.forEach(function(elemento){
+  console.log(elemento);
 });
-console.log(canais)
+
+elemento.forEach(function(elemento){
+  console.log(elemento.Nome);
+});
