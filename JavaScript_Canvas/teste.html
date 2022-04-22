@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+</head>
+<body>
+  <canvas id="tela" width="600" height="400"></canvas>
+  <script>
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    c.fillStyle="yellow"; // (através da variável fillStyle) e desenhar diversas formas
+    c.fillRect(0, 0, 500, 180); // A função fillRect recebe quatro números para pintar um retângulo. Os dois primeiros são a posição X,Y. Os outros dois são a largura e a altura do retângulo.
+    c.fillStyle="blue";
+    c.fillRect(0, 180, 500, 120);
+    c.fillStyle="Brown";
+    c.fillRect(0, 300, 500, 150);
+
+    // c.fillStyle="blue";
+    // c.beginPath();
+    // c.moveTo(300, 200);
+    // c.lineTo(200, 400);
+    // c.lineTo(400, 400);
+    // c.fill();
+
+    // c.fillStyle="yellow";
+    // c.beginPath();
+    // c.arc(300, 200, 50, 0, 2*Math.PI);
+    // c.fill();
+
+  </script>
+</body>
+</html>
