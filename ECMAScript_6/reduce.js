@@ -19,18 +19,21 @@ var alunos = [
   {nome: "Luna", idade: 4}
 ];
 
+// Lista dos nomes
 var nomes = alunos.reduce(function(listaNomes, aluno){
   listaNomes.push(aluno.nome);
   return listaNomes;
 }, []);
 console.log(nomes);
 
+// Lista das idades
 var idades = alunos.reduce(function(listaIdades, aluno){
   listaIdades.push(aluno.idade);
   return listaIdades;
 }, []);
 console.log(idades);
 
+// Soma das idades
 soma = idades.reduce(function(soma, idade){
   return soma + idade;
 });
