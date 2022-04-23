@@ -4,11 +4,4 @@ for(var numero of numeros){
   console.log(numero);
 };
 
-// var perfilDoFace = {
-//   nome: "Carlos",
-//   idade: 36
-// };
 
-// for(dado of perfilDoFace){
-//   console.log(dado);
-// };
