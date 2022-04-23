@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUESTÃO BÔNUS</title>
+  </head>
+  <body>
+    <script>
+      var pista = prompt('Qual o comprimento da pista em metros:');
+      var voltas = 20;
+      var qtdAbastecimento = 1;
+      var consumo = prompt('Qual o consumo do combustivel(km/l):');
+
+      var voltasParaPrimeiraParada = voltas / qtdAbastecimento;
+      var primeiroAbastecimento = (voltasParaPrimeiraParada * (voltas/consumo).toFixed(2));
+    
+      function informacao(primeiroAbastecimento){
+        document.write(`Seram necessarios ${primeiroAbastecimento}L para o primeiro abastecimento.`);
+      };
+
+      informacao(primeiroAbastecimento);
+      
+    </script>
+  </body>
+</html>
