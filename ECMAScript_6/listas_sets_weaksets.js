@@ -15,9 +15,9 @@ var set = new Set();
 set.add(2);
 set.add(1);
 set.add(2);
+set.add('musica1');
+set.add('musica2');
 
 set.mostrarValores();
+set.clear();
 
-for (var valor of set) {
-  console.log(valor);
-}
