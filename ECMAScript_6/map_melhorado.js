@@ -23,3 +23,11 @@ console.log(`Tamanho : ${map.size}`);
 // Saber se já existe uma chave dentro de maps.
 console.log(map.has(objeto));
 console.log(map.has("abc"));
+
+// Remover um registro especifico do map.
+map.delete("string");
+console.log(map.has("string"));
+
+// Deletar todos registros.
+map.clear();
+console.log(`Tamanho : ${map.size}`);
