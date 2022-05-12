@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 03</title>
+</head>
+<body>
+  <script>
+    var numero1 = prompt("Informe o 1° numero: ");
+    var numero2 = prompt("Informe o 2° numero: ");
+    var numero3 = prompt("Informe o 3° numero: ");
+
+    if(numero1 > numero2 && numero1 > numero3){
+      var mensagem = `O numero ${numero1} é maior!`;
+    } else if (numero2 > numero1 && numero2 > numero3){
+      var mensagem = `O numero ${numero2} é maior!`;
+    } else {
+      var mensagem = `O numero ${numero3} é maior!`;
+    }
+    alert(mensagem);
+  </script>
+</body>
+</html>
