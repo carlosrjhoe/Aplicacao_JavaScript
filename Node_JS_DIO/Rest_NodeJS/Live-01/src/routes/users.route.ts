@@ -9,9 +9,15 @@ import { Router } from "express";
 const userRouter = Router();
 userRouter.get('/users', (req, res, next) => {
   const users = [{
-    userName: "Carlos"
+    userName: "Carlos Roberto"
   }];
-  res.status(200).json({users});
+  res.status(200).send({users});
 })
 
+userRouter.get('/users/:uuid', (req, res, next) => {
+  const uuid = req.params.uuid;
+  res.status(200).send({ uuid });
+});
+
 export default userRouter;
+
