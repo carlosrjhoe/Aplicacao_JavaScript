@@ -1,17 +1,34 @@
-import express from 'express';
-import userRouter from './routes/users.route';
+import express, { Request, Response } from 'express';
+import db from './database';
+import errorHanddlerMiddleware from './middlewares/error-handdles.middleware';
+import jwtAuthenticationMiddleware from './middlewares/jwt-authentication.middleware';
+import authenticationRoute from './routes/authentication.route';
+import userRoute from './routes/user.route';
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(userRouter);
+app.use('/authentication', authenticationRoute);
+app.use('/users', jwtAuthenticationMiddleware, userRoute);
 
-app.get('/status', (req, res, next) => {
-  res.status(200).send('Olá Mundo!, Vamos começar a aprogramar...')
+app.use(errorHanddlerMiddleware);
+
+app.use('/', (req: Request, res: Response) => {
+    res.json({ message: 'ok' });
 });
 
-app.listen(3000, () => {
-  console.log('Aplicação rodando na porta 3000, Executei!');
+const server = app.listen(3000, () => {
+    console.log('listem on 3000!');
 });
+
+process.on('SIGTERM', () => {
+    db.end(() => {
+        console.log('database connection closed!')
+    });
+    server.close(() => {
+        console.log('server on 3000 closed!');
+    });
+})
+
