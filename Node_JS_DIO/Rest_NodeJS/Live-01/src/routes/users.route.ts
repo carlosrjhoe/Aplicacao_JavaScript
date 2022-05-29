@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { StatusCodes } from "http-status-codes";
 
 // get/users
 // get/users/:uuid
@@ -11,12 +12,12 @@ userRouter.get('/users', (req, res, next) => {
   const users = [{
     userName: "Carlos Roberto"
   }];
-  res.status(200).send({users});
+  res.status(StatusCodes.OK).send({users});
 })
 
 userRouter.get('/users/:uuid', (req, res, next) => {
   const uuid = req.params.uuid;
-  res.status(200).send({ uuid });
+  res.status(StatusCodes.OK).send({ uuid });
 });
 
 export default userRouter;
