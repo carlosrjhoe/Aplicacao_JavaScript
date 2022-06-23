@@ -1,8 +1,8 @@
-function somar() {
+function somar(...valores) {
   let soma = 0;
-  const quantidade = arguments.length;
+  const quantidade = valores.length;
   for(let i = 0; i < quantidade; i++) {
-    soma += arguments[i]
+    soma += valores[i];
   }
   return soma
 }
