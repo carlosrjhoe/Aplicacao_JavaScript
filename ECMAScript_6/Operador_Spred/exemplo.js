@@ -5,4 +5,7 @@
 // Caso de estudo!
 
 const listaMae = ['leite', 'macarrão', 'feijão'];
-const listaEsposa = []
+const listaEsposa = ['pão', 'queijo', 'arroz'];
+
+var listaDeCompras = listaMae.concat(listaEsposa)
+console.log(listaDeCompras)
