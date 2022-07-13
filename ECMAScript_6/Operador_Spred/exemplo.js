@@ -6,6 +6,12 @@
 
 const listaMae = ['leite', 'macarrão', 'feijão'];
 const listaEsposa = ['pão', 'queijo', 'arroz'];
+const listaEscritorio = ['adesivo', 'fita', 'caneta']
 
-var listaDeCompras = listaMae.concat(listaEsposa)
+// Serve para unir duas listas com o uso deo "concat"
+var listaDeCompras = listaMae.concat(listaEsposa, listaEscritorio) 
+
+// Serve para unir duas listas com o uso do Spred(...)
+var listaDeCompras = [...listaMae, ...listaEsposa, ...listaEscritorio];
+
 console.log(listaDeCompras)
