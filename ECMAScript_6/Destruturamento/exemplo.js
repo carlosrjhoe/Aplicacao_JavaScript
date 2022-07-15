@@ -10,9 +10,7 @@ const Usuario = {
 }
 
 /* O desestruturamento permite que usemos a sintaxe de objetos literais para extrair valores. */
-const {email} = Usuario;
-const {nome} = Usuario;
-const {sobrenome} = Usuario;
+const {email, nome, sobrenome} = Usuario;
 
 console.log(email);
 console.log(nome);
